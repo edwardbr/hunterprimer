@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
@@ -84,6 +85,9 @@ else()
 endif()
 
 
+hunter_add_package(date)
+find_package(date CONFIG REQUIRED)
+
 hunter_add_package(bigint)  
 find_package(bigint REQUIRED) 
 
@@ -130,9 +134,6 @@ find_package(Boost CONFIG REQUIRED
 
 hunter_add_package(OpenSSL)
 find_package(OpenSSL REQUIRED)
-
-hunter_add_package(date)
-find_package(date CONFIG REQUIRED)
 
 if(NOT ANDROID AND NOT APPLE)
     hunter_add_package(MySQL-client)
