@@ -235,7 +235,7 @@ hunter_config(bigint
 
 hunter_config(zxing
     URL https://github.com/edwardbr/zxing/archive/master.tar.gz
-    SHA1 f343bb34b00e723eb28a4b8d115b5b646a7ae449
+    SHA1 3bc35a7f3e077a6898b84fd930fdb57c1146933d
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
         ANDROID_ABI=${ANDROID_ABI}
@@ -262,3 +262,50 @@ hunter_config(Qt VERSION 5.12.3
         ANDROID_PLATFORM=${ANDROID_PLATFORM}
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
     )
+
+
+hunter_config(cpprestsdk
+    URL https://github.com/microsoft/cpprestsdk/archive/v2.10.14.tar.gz
+    SHA1 b98cbe0cf0135f0bfded9b31927ed89d1c0c0523
+    CMAKE_ARGS
+        ANDROID_STL=${ANDROID_STL}
+        ANDROID_ABI=${ANDROID_ABI}
+        ANDROID_PLATFORM=${ANDROID_PLATFORM}
+        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+        QT_CMAKE=${QT_CMAKE}
+        CPPREST_EXCLUDE_WEBSOCKETS=ON
+        BUILD_TESTS=OFF
+        )
+    
+hunter_config(logfault
+    URL https://github.com/edwardbr/logfault/archive/master.tar.gz
+    SHA1 2f37c4906526da7bb713214e3a475f7a648d1651
+    CMAKE_ARGS
+        ANDROID_STL=${ANDROID_STL}
+        ANDROID_ABI=${ANDROID_ABI}
+        ANDROID_PLATFORM=${ANDROID_PLATFORM}
+        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+        )
+    
+hunter_config(beast_machine
+    URL https://github.com/edwardbr/beast_machine/archive/v1.0.tar.gz
+    SHA1 228dea840b14e1894e97f0cd98466693bfdf2aed
+    CMAKE_ARGS
+        ANDROID_STL=${ANDROID_STL}
+        ANDROID_ABI=${ANDROID_ABI}
+        ANDROID_PLATFORM=${ANDROID_PLATFORM}
+        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+        )
+    
+hunter_config(Qt5Keychain
+    URL https://github.com/frankosterfeld/qtkeychain/archive/v0.9.1.tar.gz
+    SHA1 ee45dcaccbb6caa071ed044b31320fc8e8497b04
+    CMAKE_ARGS
+        BUILD_TRANSLATIONS=OFF
+        BUILD_TEST_APPLICATION=OFF
+        QTKEYCHAIN_STATIC=ON
+        Qt5Core_DIR=${Qt5Core_DIR}
+        Qt5DBus_DIR=${Qt5DBus_DIR}
+        CMAKE_INSTALL_LIBDIR=lib
+    )
+    
