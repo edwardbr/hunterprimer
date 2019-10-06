@@ -1,18 +1,14 @@
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(HunterGate)
 
-message(STATUS "[project] CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
-
-option(HUNTER_STATUS_DEBUG "Hunter debug info" OFF)
-#option(HUNTER_CONFIGURATION_TYPES "Hunter HUNTER_CONFIGURATION_TYPES" Debug)
 HunterGate(
     URL "https://github.com/ruslo/hunter/archive/v0.23.214.tar.gz"
     SHA1 "e14bc153a7f16d6a5eeec845fb0283c8fad8c358"
-    LOCAL
+    FILEPATH "${CMAKE_CURRENT_LIST_DIR}/cmake/Hunter/config.cmake"
 )
 
 set(HUNTER_KEEP_PACKAGE_SOURCES ON)
