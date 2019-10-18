@@ -21,6 +21,7 @@ hunter_config(Boost VERSION 1.70.0-p0
         ANDROID_ABI=${ANDROID_ABI}
         ANDROID_PLATFORM=${ANDROID_PLATFORM}
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+		BUILD_SHARED_LIBS=ON
 )
 hunter_config(OpenSSL VERSION 1.1.0j
     CMAKE_ARGS
@@ -29,17 +30,6 @@ hunter_config(OpenSSL VERSION 1.1.0j
         ANDROID_PLATFORM=${ANDROID_PLATFORM}
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
 )
-hunter_config(Sqlpp11 
-    URL https://github.com/hunter-packages/sqlpp11/archive/v0.57-p0.tar.gz
-    SHA1 472f23489f9a063d2b9a492910ea59a36bc55263
-
-    CMAKE_ARGS
-        ANDROID_STL=${ANDROID_STL}
-        ANDROID_ABI=${ANDROID_ABI}
-        ANDROID_PLATFORM=${ANDROID_PLATFORM}
-        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
-)
-
 hunter_config(MySQL-client VERSION 6.1.9-p1
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
@@ -72,7 +62,21 @@ hunter_config(sqlcipher
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
     )
 
-hunter_config(sqlpp11-connector-mysql
+hunter_config(Sqlpp11 
+    URL https://github.com/hunter-packages/sqlpp11/archive/v0.57-p0.tar.gz
+    SHA1 472f23489f9a063d2b9a492910ea59a36bc55263
+
+    CMAKE_ARGS
+        ANDROID_STL=${ANDROID_STL}
+        ANDROID_ABI=${ANDROID_ABI}
+        ANDROID_PLATFORM=${ANDROID_PLATFORM}
+        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+		CMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+		CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
+		ENABLE_TESTS=OFF
+)
+
+hunter_config(sqlpp11-mysql
     URL https://github.com/edwardbr/sqlpp11-connector-mysql/archive/master.tar.gz
     SHA1 b458ecc6148384810c0cd6e8f0184acdafb0d877
     CMAKE_ARGS
@@ -84,9 +88,9 @@ hunter_config(sqlpp11-connector-mysql
     )
     
 
-hunter_config(sqlpp11-connector-sqlite3
+hunter_config(sqlpp11-sqlite3
     URL https://github.com/edwardbr/sqlpp11-connector-sqlite3/archive/master.tar.gz
-    SHA1 6d408b7cf2dbe60dafa98948a43132d1c65b98ac
+    SHA1 50896264c25c2fce40d4e6759b7ed9131505790f
     CMAKE_ARGS
         SQLCIPHER=On
         ENABLE_TESTS=Off
@@ -94,6 +98,8 @@ hunter_config(sqlpp11-connector-sqlite3
         ANDROID_ABI=${ANDROID_ABI}
         ANDROID_PLATFORM=${ANDROID_PLATFORM}
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+		CMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+		CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
         )
         
 
@@ -153,17 +159,20 @@ CMAKE_ARGS
 
 hunter_config(secp256k1
     URL https://github.com/edwardbr/secp256k1/archive/master.tar.gz
-    SHA1 7229336a56a3d0171cc6c6055bf4f0635435e0cb
+    SHA1 c630cef1a69e1b8e79a121e7a3e2ba7c636bdd03
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
         ANDROID_ABI=${ANDROID_ABI}
         ANDROID_PLATFORM=${ANDROID_PLATFORM}
         CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+		SECP256K1_BUILD_TEST=off
+		SECP256K1_ENABLE_MODULE_RECOVERY=on
+		SECP256K1_ENABLE_MODULE_SCHNORR=off
         )
 
 hunter_config(libbitcoin-system
     URL https://github.com/edwardbr/libbitcoin-system/archive/master.tar.gz
-    SHA1 97cc83fe3a574f59bd5051a8262b2c266ffa9e18
+    SHA1 ae8023c736eabc61bba336d7b9789a2bbd3289a9
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
         ANDROID_ABI=${ANDROID_ABI}

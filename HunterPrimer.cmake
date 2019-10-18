@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.13)
 
+if(NOT ANDROID)
+    set(ANDROID_STL " ")
+    set(ANDROID_ABI " ")
+    set(ANDROID_PLATFORM " ")
+endif()
+
 set(CMAKE_VERBOSE_MAKEFILE ON)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
@@ -18,11 +24,6 @@ project(HunterPrimer)
 include(CTest)
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/clang_tools.cmake)
 
-if(NOT ANDROID)
-    set(ANDROID_STL " ")
-    set(ANDROID_ABI " ")
-    set(ANDROID_PLATFORM " ")
-endif()
 
 message("Qt5")
 
@@ -85,29 +86,17 @@ else()
   add_compile_options("-Wno-c++98-c++11-c++14-compat")
 endif()
 
-hunter_add_package(beast_machine)
-find_package(beast_machine CONFIG REQUIRED)
+hunter_add_package(date)
+find_package(date CONFIG REQUIRED)
 
-hunter_add_package(logfault)  
-find_package(logfault REQUIRED) 
+hunter_add_package(sqlcipher)
+find_package(sqlcipher CONFIG REQUIRED)
 
-hunter_add_package(bigint)  
-find_package(bigint REQUIRED) 
+hunter_add_package(Sqlpp11)
+find_package(Sqlpp11 CONFIG REQUIRED)
 
-hunter_add_package(zxing)  
-find_package(zxing REQUIRED) 
-
-hunter_add_package(qzxing)  
-find_package(qzxing REQUIRED)
-
-hunter_add_package(ZLIB)
-find_package(ZLIB CONFIG REQUIRED)
-
-#hunter_add_package(ICU)
-#find_package(ICU CONFIG REQUIRED) 
-
-hunter_add_package(ZeroMQ)
-find_package(ZeroMQ CONFIG REQUIRED)
+hunter_add_package(sqlpp11-sqlite3)
+find_package(sqlpp11-sqlite3 CONFIG REQUIRED)
 
 hunter_add_package(Boost COMPONENTS atomic
     chrono
@@ -138,17 +127,29 @@ find_package(Boost CONFIG REQUIRED
 hunter_add_package(OpenSSL)
 find_package(OpenSSL REQUIRED)
 
-hunter_add_package(date)
-find_package(date CONFIG REQUIRED)
+hunter_add_package(beast_machine)
+find_package(beast_machine CONFIG REQUIRED)
 
-hunter_add_package(Sqlpp11)
-find_package(Sqlpp11 CONFIG REQUIRED)
+hunter_add_package(logfault)  
+find_package(logfault REQUIRED) 
 
-hunter_add_package(sqlcipher)
-find_package(sqlcipher CONFIG REQUIRED)
+hunter_add_package(bigint)  
+find_package(bigint REQUIRED) 
 
-hunter_add_package(sqlpp11-sqlite3)
-find_package(sqlpp11-sqlite3 CONFIG REQUIRED)
+hunter_add_package(zxing)  
+find_package(zxing REQUIRED) 
+
+hunter_add_package(qzxing)  
+find_package(qzxing REQUIRED)
+
+hunter_add_package(ZLIB)
+find_package(ZLIB CONFIG REQUIRED)
+
+#hunter_add_package(ICU)
+#find_package(ICU CONFIG REQUIRED) 
+
+hunter_add_package(ZeroMQ)
+find_package(ZeroMQ CONFIG REQUIRED)
 
 hunter_add_package(libsodium)
 find_package(libsodium CONFIG REQUIRED)
