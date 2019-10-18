@@ -147,8 +147,8 @@ find_package(Sqlpp11 CONFIG REQUIRED)
 hunter_add_package(sqlcipher)
 find_package(sqlcipher CONFIG REQUIRED)
 
-hunter_add_package(sqlpp11-connector-sqlite3)
-find_package(sqlpp11-connector-sqlite3 CONFIG REQUIRED)
+hunter_add_package(sqlpp11-sqlite3)
+find_package(sqlpp11-sqlite3 CONFIG REQUIRED)
 
 hunter_add_package(libsodium)
 find_package(libsodium CONFIG REQUIRED)
