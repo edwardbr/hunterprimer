@@ -84,6 +84,7 @@ else()
   add_compile_options("-Wno-pragma-once-outside-header")
   add_compile_options("-Wno-unused-parameter")
   add_compile_options("-Wno-c++98-c++11-c++14-compat")
+  add_compile_options("-fPIC")
 endif()
 
 hunter_add_package(date)
