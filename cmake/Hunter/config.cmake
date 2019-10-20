@@ -171,7 +171,7 @@ hunter_config(secp256k1
 
 hunter_config(libbitcoin-system
     URL https://github.com/edwardbr/libbitcoin-system/archive/master.tar.gz
-    SHA1 ae8023c736eabc61bba336d7b9789a2bbd3289a9
+    SHA1 40284d4b0223806109a17f3dd40881e85389f284
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
         ANDROID_ABI=${ANDROID_ABI}
