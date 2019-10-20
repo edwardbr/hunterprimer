@@ -287,7 +287,7 @@ hunter_config(cpprestsdk
     
 hunter_config(logfault
     URL https://github.com/edwardbr/logfault/archive/master.tar.gz
-    SHA1 2f37c4906526da7bb713214e3a475f7a648d1651
+    SHA1 aeb088b0d6d7d573aa4c4142344e26148117450f
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
         ANDROID_ABI=${ANDROID_ABI}
