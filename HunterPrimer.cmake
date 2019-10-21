@@ -41,7 +41,7 @@ if(EXISTS ${QT_CMAKE})
   set(Qt5LinguistTools_DIR "${QT_CMAKE}/Qt5LinguistTools")
 
   find_package(Qt5 COMPONENTS Core Gui Quick Multimedia Widgets LinguistTools REQUIRED)
-  if(NOT ANDROID AND NOT APPLE)
+  if(NOT ANDROID AND NOT IOS)
     set(Qt5DBus_DIR "${QT_CMAKE}/Qt5DBus")
     set(Qt5WebEngine_DIR "${QT_CMAKE}/Qt5WebEngine")
     find_package(Qt5 COMPONENTS WebEngine DBus REQUIRED)
@@ -61,7 +61,7 @@ else()
 
 endif()
 
-if(ANDROID OR APPLE)
+if(ANDROID OR IOS)
 set(QUICK_COMPILER false)
 else()
 set(QUICK_COMPILER true)
