@@ -1,12 +1,11 @@
-
-#hunter_config(ZLIB VERSION 1.2.8-p3
-#    CMAKE_ARGS 
-#        ANDROID_STL=${ANDROID_STL}
-#        ANDROID_ABI=${ANDROID_ABI}
-#        ANDROID_PLATFORM=${ANDROID_PLATFORM}
-#        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
-#    )
-    
+hunter_config(ZLIB VERSION "1.2.11-p1"
+    CMAKE_ARGS
+        ANDROID_STL=${ANDROID_STL}
+        ANDROID_ABI=${ANDROID_ABI}
+        ANDROID_PLATFORM=${ANDROID_PLATFORM}
+        CMAKE_ANDROID_ARCH=${CMAKE_ANDROID_ARCH}
+    )
+        
 hunter_config(date VERSION 2.4.1
     CMAKE_ARGS
         ANDROID_STL=${ANDROID_STL}
@@ -316,4 +315,3 @@ hunter_config(Qt5Keychain
         Qt5DBus_DIR=${Qt5DBus_DIR}
         CMAKE_INSTALL_LIBDIR=lib
     )
-    
